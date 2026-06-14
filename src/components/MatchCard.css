@@ -1,0 +1,203 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.match-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideIn 0.3s ease-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.match-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.02);
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+
+.match-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.match-card:hover::before {
+  opacity: 1;
+}
+
+.match-card.win {
+  border-color: rgba(74, 222, 128, 0.2);
+  background: rgba(74, 222, 128, 0.03);
+}
+
+.match-card.win:hover {
+  background: rgba(74, 222, 128, 0.06);
+  border-color: rgba(74, 222, 128, 0.3);
+}
+
+.match-card.loss {
+  border-color: rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.03);
+}
+
+.match-card.loss:hover {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.match-result {
+  font-weight: 700;
+  font-size: 0.85em;
+  min-width: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: scaleIn 0.4s ease-out;
+}
+
+.match-card.win .match-result {
+  color: #4ade80;
+}
+
+.match-card.loss .match-result {
+  color: #ef4444;
+}
+
+.champion-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  min-width: auto;
+  flex-shrink: 0;
+}
+
+.champion-image {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  object-fit: cover;
+  flex-shrink: 0;
+  animation: fadeIn 0.4s ease-out;
+  transition: all 0.25s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.match-card:hover .champion-image {
+  transform: scale(1.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 120px;
+}
+
+.champion-name {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.95em;
+  letter-spacing: 0.2px;
+}
+
+.game-type {
+  font-size: 0.75em;
+  color: #999999;
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.game-date {
+  font-size: 0.7em;
+  color: #777777;
+  white-space: nowrap;
+}
+
+.match-stats {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  gap: 4px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.stat-item .label {
+  font-size: 0.7em;
+  color: #888888;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.stat-item .value {
+  font-weight: 600;
+  font-size: 0.95em;
+  color: #ffffff;
+}
+
+.expand-indicator {
+  color: #666666;
+  font-size: 1.1em;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.match-card:hover .expand-indicator {
+  color: #999999;
+}

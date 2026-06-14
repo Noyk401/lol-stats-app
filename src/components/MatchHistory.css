@@ -1,0 +1,161 @@
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.match-history {
+  margin-top: 40px;
+  animation: slideDown 0.4s ease-out;
+}
+
+.match-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.match-history h3 {
+  color: #ffffff;
+  font-size: 1.6em;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.refresh-matches-btn {
+  padding: 11px 24px;
+  background: #ffffff;
+  border: none;
+  color: #0d0d0d;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9em;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.refresh-matches-btn:hover:not(:disabled) {
+  background: #e8e8e8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
+}
+
+.refresh-matches-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.refresh-matches-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation: pulse 2s infinite;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #ff8888;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 500;
+  animation: slideDown 0.4s ease-out;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888888;
+  font-size: 0.95em;
+  animation: pulse 2s infinite;
+  font-weight: 400;
+}
+
+.matches-end {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.loading-more {
+  text-align: center;
+  color: #888888;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.no-more {
+  text-align: center;
+  color: #666666;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.match-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.filter-btn {
+  padding: 9px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #aaaaaa;
+  border-radius: 22px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.3px;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #d0d0d0;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active {
+  background: #ffffff;
+  color: #0d0d0d;
+  border-color: #ffffff;
+  font-weight: 600;
+}
+
+.no-matches {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888888;
+  font-style: italic;
+}
+
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

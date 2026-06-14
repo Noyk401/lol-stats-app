@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: #0d0d0d;
+  color: #d4d4d4;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0d;
+}
+
+.header {
+  background: #0d0d0d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 32px 48px;
+  text-align: center;
+}
+
+.header h1 {
+  margin-bottom: 16px;
+  font-size: 3.2em;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.2;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header p {
+  color: #888888;
+  font-size: 1.1em;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.main {
+  flex: 1;
+  padding: 60px 48px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.welcome {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05em;
+  color: #666666;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #ff8888;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin: 16px 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.api-notice {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #aaaaaa;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 0.95em;
+  font-weight: 500;
+}
