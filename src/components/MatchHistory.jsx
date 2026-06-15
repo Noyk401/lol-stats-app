@@ -4,7 +4,7 @@ import MatchDetails from './MatchDetails';
 import './MatchHistory.css';
 import API_BASE_URL from '../config';
 
-function MatchHistory({ puuid }) {
+function MatchHistory({ puuid, onPlayerSearch }) {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
@@ -196,7 +196,7 @@ function MatchHistory({ puuid }) {
               }
             />
             {expandedMatchId === match.metadata.matchId && (
-              <MatchDetails match={match} puuid={puuid} />
+              <MatchDetails match={match} puuid={puuid} onPlayerSearch={onPlayerSearch} />
             )}
           </div>
         ))

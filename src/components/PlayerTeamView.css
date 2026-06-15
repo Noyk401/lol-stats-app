@@ -72,9 +72,24 @@
 
 .player-name {
   color: #e8e8e8;
-  font-weight: 600;
-  font-size: 0.9em;
-  letter-spacing: 0.2px;
+  font-weight: 700;
+  font-size: 1.05em;
+  letter-spacing: 0.3px;
+  transition: all 0.25s;
+}
+
+.player-name.clickable {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin: -4px -8px;
+  transition: all 0.2s;
+}
+
+.player-name.clickable:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .champion-name {

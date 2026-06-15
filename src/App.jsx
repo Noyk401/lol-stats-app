@@ -88,7 +88,7 @@ function App() {
       {playerData && (
         <main className="main">
           <PlayerProfile playerData={playerData} onRefresh={handleRefreshRank} loading={loading} />
-          <MatchHistory puuid={playerData.account.puuid} />
+          <MatchHistory puuid={playerData.account.puuid} onPlayerSearch={handleSearch} />
         </main>
       )}
 

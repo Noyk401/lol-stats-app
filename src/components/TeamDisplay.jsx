@@ -1,7 +1,7 @@
 import PlayerTeamView from './PlayerTeamView';
 import './TeamDisplay.css';
 
-function TeamDisplay({ team, teamColor }) {
+function TeamDisplay({ team, teamColor, onPlayerClick }) {
   const totalDamage = team.reduce((sum, p) => sum + p.totalDamageDealtToChampions, 0);
 
   return (
@@ -16,7 +16,7 @@ function TeamDisplay({ team, teamColor }) {
 
       <div className="team-players">
         {team.map((player) => (
-          <PlayerTeamView key={player.puuid} player={player} />
+          <PlayerTeamView key={player.puuid} player={player} onPlayerClick={onPlayerClick} />
         ))}
       </div>
     </div>

@@ -34,6 +34,22 @@ export const getAccountByRiotId = async (gameName, tagLine) => {
   }
 };
 
+export const getAccountByPuuid = async (puuid) => {
+  try {
+    const RIOT_API_KEY = getApiKey();
+    const url = `${RIOT_BASE_URL}/riot/account/v1/accounts/by-puuid/${puuid}`;
+    const response = await axios.get(url, {
+      headers: {
+        'X-Riot-Token': RIOT_API_KEY,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting account by puuid:', error.response?.data || error.message);
+    throw new Error(`Failed to get account: ${error.message}`);
+  }
+};
+
 export const getSummonerByPuuid = async (puuid) => {
   try {
     const RIOT_API_KEY = getApiKey();

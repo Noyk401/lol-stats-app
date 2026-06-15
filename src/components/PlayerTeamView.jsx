@@ -1,7 +1,7 @@
 import { getItemImageUrl, getChampionImageUrl } from '../utils/lolImages';
 import './PlayerTeamView.css';
 
-function PlayerTeamView({ player }) {
+function PlayerTeamView({ player, onPlayerClick }) {
   const getItemIds = () => {
     const items = [];
     for (let i = 0; i < 6; i++) {
@@ -30,7 +30,13 @@ function PlayerTeamView({ player }) {
           }}
         />
         <div className="player-details">
-          <div className="player-name">{player.summonerName}</div>
+          <div
+            className="player-name clickable"
+            onClick={() => onPlayerClick && onPlayerClick(player.summonerName)}
+            title="Click to view profile"
+          >
+            {player.summonerName}
+          </div>
           <div className="champion-name">{player.championName}</div>
           <div className="player-kda">
             {player.kills}/{player.deaths}/{player.assists}
