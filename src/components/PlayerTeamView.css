@@ -83,6 +83,19 @@
   font-weight: 400;
 }
 
+.player-kda {
+  color: #ffcc00;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.player-level {
+  color: #90ee90;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
 .player-items {
   display: flex;
   gap: 5px;

@@ -32,6 +32,10 @@ function PlayerTeamView({ player }) {
         <div className="player-details">
           <div className="player-name">{player.summonerName}</div>
           <div className="champion-name">{player.championName}</div>
+          <div className="player-kda">
+            {player.kills}/{player.deaths}/{player.assists}
+          </div>
+          <div className="player-level">Lvl {player.champLevel}</div>
         </div>
       </div>
 
