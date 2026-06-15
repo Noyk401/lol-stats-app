@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import MatchCard from './MatchCard';
 import MatchDetails from './MatchDetails';
 import './MatchHistory.css';
+import API_BASE_URL from '../config';
 
 function MatchHistory({ puuid }) {
   const [matches, setMatches] = useState([]);
@@ -52,7 +53,7 @@ function MatchHistory({ puuid }) {
 
       setError(null);
       const response = await fetch(
-        `/api/match/${puuid}/history?start=${start}&count=10`
+        `${API_BASE_URL}/api/match/${puuid}/history?start=${start}&count=10`
       );
 
       if (response.status === 429) {

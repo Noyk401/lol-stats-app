@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import PlayerProfile from './components/PlayerProfile';
 import MatchHistory from './components/MatchHistory';
+import API_BASE_URL from './config';
 
 function App() {
   const [playerData, setPlayerData] = useState(null);
@@ -13,7 +14,7 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/player/search', {
+      const response = await fetch(`${API_BASE_URL}/api/player/search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ gameName, tagLine }),
@@ -38,7 +39,7 @@ function App() {
 
     setLoading(true);
     try {
-      const response = await fetch(`/api/player/${playerData.account.puuid}`);
+      const response = await fetch(`${API_BASE_URL}/api/player/${playerData.account.puuid}`);
 
       if (response.status === 429) {
         setError('Rate limit exceeded. Please wait before trying again.');
