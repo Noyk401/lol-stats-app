@@ -1,19 +1,4 @@
 {
-  "buildCommand": "npm install",
-  "outputDirectory": "./",
-  "framework": "other",
-  "env": {
-    "RIOT_API_KEY": "@riot_api_key"
-  },
-  "functions": {
-    "server/index.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/server/index.js"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
